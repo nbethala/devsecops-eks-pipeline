@@ -1,1 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
 *.pem
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+terraform.tfvars
+override.tf
+override.tf.json
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# Jenkins
+secrets/
+*.hpi
+*.jpi
+
+# Vault
+vault-agent.log
+vault-token
+
+# Kubernetes
+.kube/
+*.yaml.backup
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
