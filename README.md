@@ -23,26 +23,31 @@ By integrating vulnerability scanning, static analysis, credential hygiene, GitO
 
 ---
 
-## 🛠️ High-Level Workflow
+## 🛠️ High-Level Implementation Summary
 
-1. **Code Push** → GitHub triggers Jenkins pipeline
-2. **CI Stages**:
-   - JUnit testing
-   - SonarQube static analysis (OWASP-aligned)
-   - OWASP dependency scan
-   - Trivy container scan
-3. **Build & Publish**:
-   - Docker image built and pushed to Docker Hub
-4. **CD Stages**:
-   - Kubernetes deployment via manifest
-   - Ingress + LoadBalancer exposed
-5. **GitOps Deployment**:
-   - Argo CD syncs manifests from GitHub to cluster
-   - Drift detection and rollback enabled
-6. **Monitoring & Alerts**:
-   - Prometheus scrapes metrics
-   - Grafana dashboards
-   - Slack/email notifications
+### 🔄 CI/CD Pipeline (Jenkins)
+- Source code pulled from GitHub on commit
+- Jenkins pipeline stages:
+  - Code checkout and build
+  - JUnit testing
+  - SonarQube static analysis (OWASP Top 10-aligned ruleset)
+  - OWASP Dependency Check for third-party vulnerabilities
+  - Trivy scan for container and IaC vulnerabilities
+  - Docker image build and push to Docker Hub
+- Secure credential injection via Jenkins credential store (no secrets in code)
+
+### 🚀 CDP / GitOps Deployment (Argo CD)
+- Argo CD deployed on EKS with TLS and RBAC
+- Kubernetes manifests stored in Git and synced declaratively
+- Drift detection and rollback enabled
+- Argo CD UI used for visual sync status and deployment history
+
+### ⚙️ Cloud Operations & Observability
+- Infrastructure manually provisioned on AWS (EC2, EKS, Security Groups, Load Balancer)
+- Prometheus and Node Exporter integrated for metrics collection
+- Grafana dashboards for real-time visualization
+- Slack and email notifications for pipeline status and alerts
+- Audit trail maintained via archived Trivy and SonarQube reports
 
 ---
 
@@ -88,8 +93,25 @@ Argo CD manages declarative application deployments to Kubernetes, enabling GitO
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure — devsecops-eks-pipeline
 
+```
+devsecops-eks-pipeline
+├── LICENSE
+├── README.md
+├── backend
+│   ├── Dockerfile
+│   ├── public
+│   ├── src
+├── kubernetes
+│   ├── deployment.yml
+│   ├── node-service.yml
+│   └── service.yml
+├── setup
+│   ├── argoCD-installation.md
+│   └── eks-setup.md
+└── troubleshoot.md
+```
 
 ## 🧠 Learning Note: Manual Infrastructure Provisioning
 
