@@ -1,4 +1,4 @@
-# 🛡️ DevSecOps — Deployment of a Netflix Clone on AWS EKS
+# 🛡️ DevSecOps — Deploy Netflix Clone on AWS EKS
 
 ## 📌 Executive Summary
 
