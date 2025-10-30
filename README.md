@@ -8,6 +8,9 @@ By integrating vulnerability scanning, static analysis, credential hygiene, GitO
 
 ---
 
+<img width="1318" height="734" alt="netflix-app-live" src="https://github.com/user-attachments/assets/880395f7-a8a7-4b6b-b3b8-6437c14f5ef0" />
+
+
 ## 🧱 Architecture Overview
 
 | Layer             | Tools & Services                                                                 |
@@ -26,6 +29,9 @@ By integrating vulnerability scanning, static analysis, credential hygiene, GitO
 ## 🛠️ High-Level Implementation Summary
 
 ### 🔄 CI/CD Pipeline (Jenkins)
+
+<img width="1395" height="861" alt="Jenkins-successful-build" src="https://github.com/user-attachments/assets/8a81e5ff-f27d-474f-85ba-e1a4be60ee67" />
+
 - Source code pulled from GitHub on commit
 - Jenkins pipeline stages:
   - Code checkout and build
@@ -48,6 +54,12 @@ By integrating vulnerability scanning, static analysis, credential hygiene, GitO
 - Grafana dashboards for real-time visualization
 - Slack and email notifications for pipeline status and alerts
 - Audit trail maintained via archived Trivy and SonarQube reports
+
+  
+<img width="1348" height="728" alt="prometheus-jenkins" src="https://github.com/user-attachments/assets/c08a1ca6-fc88-4ec8-9077-84ba5e4d0413" />
+
+
+<img width="1339" height="739" alt="grafana-dashboard" src="https://github.com/user-attachments/assets/0b050dce-00cb-4dfe-a649-918f369b1aa8" />
 
 ---
 
