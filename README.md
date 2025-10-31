@@ -8,7 +8,7 @@ By integrating vulnerability scanning, static analysis, credential hygiene, GitO
 
 ---
 
-<img width="1318" height="734" alt="netflix-app-live" src="https://github.com/user-attachments/assets/880395f7-a8a7-4b6b-b3b8-6437c14f5ef0" />
+<img width="600" height="400" alt="netflix-app-live" src="https://github.com/user-attachments/assets/880395f7-a8a7-4b6b-b3b8-6437c14f5ef0" />
 
 
 ## 🧱 Architecture Overview
@@ -25,6 +25,12 @@ By integrating vulnerability scanning, static analysis, credential hygiene, GitO
 | **App Layer**     | Netflix Clone with TMDB API integration                                          |
 
 ---
+
+![C4 Architecture - Context](https://github.com/user-attachments/assets/487ff2aa-dfb5-4e20-a50d-7a8c10a2e71a)
+
+
+![C4 Architecture - Containers](https://github.com/user-attachments/assets/8a7545c0-3c1a-4e4c-8c23-89ea22aac008)
+
 
 ## 🛠️ High-Level Implementation Summary
 
